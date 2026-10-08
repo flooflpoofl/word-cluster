@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Capriola&family=Comic+Relief:wght@400;700&display=swap');
 
 :root {
 
@@ -20,8 +20,8 @@
     --cluster-cell-letter-fontsize: 0.6em;
     --cluster-cell-border-width: 1px;
 
-    /* Font */
-    --main-font-family: 'Sniglet';
+    /* Fonts */
+    --main-font-family: 'Chalkboard', 'Comic Relief', Helvetica, sans-serif;
 
     /* Main colors */
     --color-main-white: white;

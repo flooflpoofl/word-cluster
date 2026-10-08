@@ -17,7 +17,7 @@ body {
     min-width: 100vw;
     min-height: 100vh;
 
-    font-family: var(--main-font-family), sans-serif;
+    font-family: var(--main-font-family);
 
     background-color: var(--color-main-medium-beige);
 }
@@ -33,7 +33,7 @@ h5 {
 header,
 footer {
     padding: 1em 0;
-    font-family: Helvetica, sans-serif;
+    font-family: var(--main-font-family);
     text-align: center;
     background-color: var(--color-main-light-beige);
 }
@@ -41,8 +41,9 @@ footer {
 header {
     grid-area: header;
 
-    font-weight: bolder;
     font-size: 1.25em;
+    font-weight: bold;
+
     border-bottom: 2px solid var(--color-main-dark-accent);
 }
 
