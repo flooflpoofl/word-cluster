@@ -1,0 +1,57 @@
+#clusterArea {
+    grid-area: cluster;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: var(--cluster-area-min-height);
+    max-height: var(--cluster-area-max-height);
+
+    background-color: var(--color-main-light-beige);
+}
+
+#clusterGrid {
+    display: grid;
+
+    gap: var(--cluster-cell-border-width);
+
+    font-size: var(--cluster-fontsize);
+}
+
+.clusterGridCell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 100%;
+    min-height: 100%;
+
+    border-radius: 0;
+    outline: var(--cluster-cell-border-width) solid black;
+
+    text-transform: uppercase;
+    font-size: var(--cluster-cell-letter-fontsize);
+}
+
+.clusterGridCell.letter {
+    color: var(--color-main-extradark-grey);
+    background-color: var(--color-main-white);
+}
+
+.clusterGridCell.clue {
+    color: var(--color-main-white);
+    background-color: var(--color-main-dark-accent);
+}
+
+.clusterGridCell.clue.horizontal {
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+
+}
+
+.clusterGridCell.clue.vertical {
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}

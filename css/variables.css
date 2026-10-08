@@ -1,0 +1,41 @@
+:root {
+
+    /* Area sizing */
+    --settings-area-min-width-column: 20rem;
+    --settings-area-min-width-grid: 28rem;
+
+    --clues-area-max-height: 28rem;
+
+    --cluster-area-max-width: 40rem;
+    --cluster-area-min-height: 36rem;
+    --cluster-area-max-height: 50rem;
+
+    /* Cluster sizing */
+    --cluster-grid-fontsize: 1rem;
+
+    --cluster-cell-width: 1em;
+    --cluster-cell-height: 1em;
+    --cluster-cell-letter-fontsize: 0.6em;
+    --cluster-cell-border-width: 1px;
+
+    /* Font */
+    --main-font-family: 'Chalkboard';
+
+    /* Main colors */
+    --color-main-white: white;
+    --color-main-black: black;
+
+    --color-main-extralight-grey: #F2F2F2;
+    --color-main-light-grey: #D9D9D9;
+    --color-main-medium-grey: #BFBFBF;
+    --color-main-dark-grey: #737373;
+    --color-main-extradark-grey: #404040;
+
+    --color-main-light-beige: #F9F6F0;
+    --color-main-medium-beige: #E8DCCB;
+    --color-main-dark-beige: #CBB5A0;
+
+    --color-main-light-accent: #97B2DE;
+    --color-main-medium-accent: #1A488E;
+    --color-main-dark-accent: #092147;
+}

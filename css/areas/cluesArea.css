@@ -1,0 +1,48 @@
+#cluesArea {
+    grid-area: clues;
+
+    max-height: var(--clues-area-max-height);
+    overflow-y: scroll;
+
+    background-color: var(--color-main-light-beige);
+}
+
+#cluesArea>h3 {
+    margin-bottom: 1em;
+}
+
+#cluesContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    gap: 0.5em;
+}
+
+.clue {
+    display: flex;
+    flex-direction: row;
+
+    width: 48%;
+    padding: 0.25em;
+
+    border-radius: 0.25em;
+
+    background-color: var(--color-main-white);
+}
+
+.clueId {
+    min-width: 2em;
+
+    padding: 0 0.25em;
+    margin-right: 0.5em;
+
+    font-weight: bold;
+    text-align: end;
+
+    color: var(--color-main-dark-accent);
+}
+
+.clueText {
+    color: var(--color-main-extradark-grey);
+}

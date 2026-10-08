@@ -1,0 +1,42 @@
+#settingsArea {
+    grid-area: settings;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: var(--settings-area-min-width-column);
+
+    gap: 0.5em;
+
+    background-color: var(--color-main-white);
+}
+
+#settingsArea>div {
+    padding: 0.5em;
+
+    border-radius: 0.25em;
+    border: 1px solid var(--color-main-light-grey);
+
+    background-color: var(--color-main-light-beige);
+}
+
+.settingsHeader {
+    margin-bottom: 0.5em;
+    text-decoration: underline;
+}
+
+.settingsLabel {
+    color: var(--color-main-extradark-grey);
+}
+
+#wordCountContainer {
+    margin-right: 2em;
+}
+
+#wordsContainer {
+    flex-wrap: wrap;
+}
+
+#targetRatioContainer>div {
+    flex-wrap: wrap;
+}

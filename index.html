@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Cluster</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <div id="mainGrid">
+        <!-- HEADER -->
+        <header>
+            <h1>Word Cluster</h1>
+        </header>
+
+        <!-- SETTINGS -->
+        <div id="settingsArea">
+
+            <!-- WORD SETTINGS -->
+            <div id="wordsContainer" class="fc-row">
+                <!-- CATEGORY -->
+                <div id="categoryContainer" class="fc-column">
+                    <h4 class="settingsHeader">Välj kategori</h4>
+                    <select name="category" id="categoryInput"></select>
+                </div>
+                <!-- WORD COUNT -->
+                <div id="wordCountContainer" class="fc-column">
+                    <h4 id="wordCountHeader" class="settingsHeader">Antal ord</h4>
+                    <input type="range" name="wordCount" id="wordCountInput" min="1">
+                </div>
+                <!-- SHOW SOLUTION -->
+                <div id="showSolutionInputContainer" class="fc-column">
+                    <h4 class="settingsHeader">Facit</h4>
+                    <input type="checkbox" name="showSolution" id="showSolutionInput">
+                </div>
+            </div>
+
+            <!-- TARGET RATIO -->
+            <div id="targetRatioContainer" class="fc-column">
+                <h4 class="settingsHeader">Önskat format</h4>
+                <div class="fc-row">
+                    <!-- SQUARE -->
+                    <div>
+                        <input type="radio" name="targetRatio" id="targetRatioSquareInput" value="1" checked>
+                        <label for="targetRatioSquareInput" class="settingsLabel">Kvadrat</label>
+                    </div>
+                    <!-- PORTRAIT -->
+                    <div>
+                        <input type="radio" name="targetRatio" id="targetRatioPortraitInput" value="0.7">
+                        <label for="targetRatioPortraitInput" class="settingsLabel">Stående</label>
+                    </div>
+                    <!-- LANDSCAPE -->
+                    <div>
+                        <input type="radio" name="targetRatio" id="targetRatioLandscapeInput" value="1.4">
+                        <label for="targetRatioLandscapeInput" class="settingsLabel">Liggande</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WEIGHT -->
+            <div id="weightContainer" class="fc-column">
+                <h4 class="settingsHeader">Prioritera</h4>
+                <div class="fc-row">
+                    <div class="settingsLabel">Storlek</div>
+                    <input type="range" name="weight" id="weightInput" min="0" max="100" step="10">
+                    <div class="settingsLabel">Format</div>
+                </div>
+            </div>
+
+            <!-- BUTTON -->
+            <button id="newClusterButton">Skapa</button>
+        </div>
+
+        <!-- CLUSTER -->
+        <div id="clusterArea"></div>
+
+        <!-- CLUES -->
+        <div id="cluesArea"></div>
+
+        <!-- FOOTER -->
+        <footer>
+            <h4>&copy FlooflPoofl 2026</h4>
+        </footer>
+    </div>
+</body>
+<script src="./js/sampleData.js"></script>
+<script src="./js/wordCluster.js"></script>
+<script src="./js/WordClusterApp.js"></script>
+<script src="./js/main.js"></script>
+
+</html>

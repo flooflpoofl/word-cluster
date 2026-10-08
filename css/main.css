@@ -1,0 +1,149 @@
+@import url('./variables.css');
+@import url('./areas/settingsArea.css');
+@import url('./areas/cluesArea.css');
+@import url('./areas/clusterArea.css');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 100vw;
+    min-height: 100vh;
+
+    font-family: 'Chalkboard', sans-serif;
+
+    background-color: var(--color-main-medium-beige);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--color-main-dark-accent);
+}
+
+header,
+footer {
+    padding: 1em 0;
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+    background-color: var(--color-main-light-beige);
+}
+
+header {
+    grid-area: header;
+
+    font-weight: bolder;
+    font-size: 1.25em;
+    border-bottom: 2px solid var(--color-main-dark-accent);
+}
+
+footer {
+    grid-area: footer;
+
+    border-top: 2px solid var(--color-main-dark-accent);
+}
+
+button {
+    align-self: center;
+
+    cursor: pointer;
+
+    outline: none;
+    border: 2px solid var(--color-main-dark-accent);
+    border-radius: 0.25em;
+
+    padding: 0.25em 1em;
+    margin: 1em 0 0.25em 0;
+
+    font-family: 'Chalkboard';
+    font-size: 1.2em;
+    text-transform: uppercase;
+
+    color: var(--color-main-white);
+    background-color: var(--color-main-medium-accent);
+}
+
+button:hover {
+    background-color: var(--color-main-dark-accent);
+}
+
+.fc-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 1em;
+}
+
+.fc-column {
+    display: flex;
+    flex-direction: column;
+}
+
+#mainGrid {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "settings"
+        "clues"
+        "cluster"
+        "footer";
+
+    width: 100%;
+    max-width: var(--cluster-area-max-width);
+
+    gap: 1em;
+    padding: 1em;
+
+    overflow: scroll;
+
+    background-color: var(--color-main-white);
+}
+
+#mainGrid>div {
+    padding: 1em;
+
+    border: 1px solid var(--color-main-dark-accent);
+    border-radius: 0.25em;
+}
+
+.noContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    font-size: 1.5em;
+    text-align: center;
+
+    color: var(--color-main-dark-accent);
+}
+
+@media (width > 64rem) {
+
+    #mainGrid {
+        grid-template-areas:
+            "header header"
+            "settings cluster"
+            "clues cluster"
+            "footer footer";
+
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-columns: var(--settings-area-min-width-grid) minmax(var(--settings-area-min-width-grid), var(--cluster-area-max-width));
+
+        width: auto;
+        max-width: none;
+        max-height: var(--cluster-area-max-height);
+    }
+}
