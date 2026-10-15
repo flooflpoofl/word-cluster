@@ -79,7 +79,7 @@ class WordClusterApp {
             this.categoryInput.add(optionElement);
         });
 
-        // Initialize with first categiry
+        // Initialize with first category
         const initCategoryName = categoryNames[0];
         this.categoryInput.value = initCategoryName;
 
@@ -93,8 +93,17 @@ class WordClusterApp {
         const currentCategoryName = this.settings['categoryName'];
         const currentWordCount = this.settings['wordCount'];
 
+        const isMathsCategory = currentCategoryName.split('_')[0] === 'maths';
+
         // Update max
-        const newMaxWordCount = this.data[currentCategoryName].wordsAndClues.length;
+        let newMaxWordCount;
+        if ( isMathsCategory ) {
+            // 50 for maths problems
+            newMaxWordCount = 50;
+        } else {
+            // The number of words and clues otherwise
+            newMaxWordCount = this.data[currentCategoryName].wordsAndClues.length;
+        }
         this.wordCountInput.max = newMaxWordCount;
 
         // Update values if current word count exceeds new max
@@ -140,15 +149,43 @@ class WordClusterApp {
         const currentCategoryName = this.settings.categoryName;
         const currentWordCount = this.settings.wordCount;
 
-        // Get a shuffled array of the words and clues
-        const allWordsAndClues = this.data[currentCategoryName].wordsAndClues;
-        shuffleArray(allWordsAndClues);
+        // Handle maths categories
+        const isMathsCategory = currentCategoryName.split('_')[0] === 'maths';
 
-        // Only keep elements up to word count
-        const randomCurrentWordsAndClues = allWordsAndClues.slice(0, currentWordCount);
+        if (isMathsCategory) {
 
-        randomCurrentData.wordsAndClues = randomCurrentWordsAndClues;
-        randomCurrentData.title = this.data[currentCategoryName].title; // title for current category
+            // Default max
+            let maxOperand = 50;
+            let maxSolution = 25;
+
+            // Set max number based on category
+            const mathsDifficulty = currentCategoryName.split('_')[1];
+            if ( mathsDifficulty === 'easy') maxOperand = 25, maxSolution = 100;
+            if ( mathsDifficulty === 'hard') maxOperand = 1000, maxSolution = 100;
+
+            const problems = generateProblems(currentWordCount, maxOperand, maxSolution);
+
+            const randomCurrentWordsAndClues = problems.map( problem => {
+                const word = getWordFromNumber(problem.solution);
+                const clue = getProblemString(problem);
+                
+                return { word, clue };
+            });
+
+            randomCurrentData.title = 'Vad blir resultatet av dessa operationer?';
+            randomCurrentData.wordsAndClues = randomCurrentWordsAndClues;
+
+        } else {
+            // Get a shuffled array of the words and clues
+            const allWordsAndClues = this.data[currentCategoryName].wordsAndClues;
+            shuffleArray(allWordsAndClues);
+
+            // Only keep elements up to word count
+            const randomCurrentWordsAndClues = allWordsAndClues.slice(0, currentWordCount);
+
+            randomCurrentData.wordsAndClues = randomCurrentWordsAndClues;
+            randomCurrentData.title = this.data[currentCategoryName].title; // title for current category
+        }
 
         return randomCurrentData
     }
@@ -283,8 +320,8 @@ class WordClusterApp {
                         // Create the clue id and append to cell element
                         cellElement.classList.add('clue', clusterCell.orientation);
                         // The clue id
-                        // (this will become a problem if non-unique words are present)
                         const clueId = words.findIndex(word => word.toLowerCase() === clusterCell.word.toLowerCase());
+                        words[clueId] = ''; // hacky handling of non-unique words
                         const clueElement = document.createTextNode(parseInt(clueId + 1)); // no zero
 
                         cellElement.appendChild(clueElement);
@@ -338,7 +375,7 @@ class WordClusterApp {
         this.settings['sizeWeight'] = newSizeWeight;
         this.settings['ratioWeight'] = newRatioWeight;
     }
-
+    
     onNewClusterButtonClick() {
 
         // Get random words and clues

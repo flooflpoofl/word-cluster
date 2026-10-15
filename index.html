@@ -23,7 +23,10 @@
                 <!-- CATEGORY -->
                 <div id="categoryContainer" class="fc-column">
                     <h4 class="settingsHeader">Välj kategori</h4>
-                    <select name="category" id="categoryInput"></select>
+                    <select name="category" id="categoryInput">
+                        <option value="maths_easy">Matte (lätt)</option>
+                        <option value="maths_hard">Matte (svår)</option>
+                    </select>
                 </div>
                 <!-- WORD COUNT -->
                 <div id="wordCountContainer" class="fc-column">
@@ -81,11 +84,14 @@
 
         <!-- FOOTER -->
         <footer>
-            <h4>&copy FlooflPoofl 2026</h4>
+            <h3>&copy FlooflPoofl 2026</h3>
+            <img src="./img/floofl.png" alt="FlooflPoofl">
         </footer>
     </div>
 </body>
 <script src="./js/sampleData.js"></script>
+<script src="./js/numberToWord.js"></script>
+<script src="./js/generateProblem.js"></script>
 <script src="./js/wordCluster.js"></script>
 <script src="./js/WordClusterApp.js"></script>
 <script src="./js/main.js"></script>

@@ -3,6 +3,11 @@ const randIntBetween = (minInt, maxInt) => {
     return Math.floor(Math.random() * (maxInt - minInt + 1) + minInt);
 };
 
+const randFromArray = arr => {
+    const randIndex = randIntBetween(0, arr.length - 1);
+    return arr[randIndex];
+};
+
 const shuffleArray = arr => {
 
     // Fisher-Yates

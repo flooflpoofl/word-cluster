@@ -41,48 +41,31 @@ const SAMPLE_DATA = {
             { word: 'Wien', clue: 'Österrike?' }
         ]
     },
-
-    "maths": {
-        description: 'Matematikproblem',
-        title: 'Vad blir resultatet av dessa operationer?',
+    
+    "animals": {
+        description: 'Djurlatin',
+        title: 'Vilket djur har det latinska namnet...',
         wordsAndClues: [
-            { word: 'noll', clue: '10 - 2 x 5' },
-            { word: 'ett', clue: '9 - 4 x 2' },
-            { word: 'två', clue: '50 / 25' },
-            { word: 'tre', clue: '99 / 33' },
-            { word: 'fyra', clue: '2 + 50 / 25' },
-            { word: 'fem', clue: '100 / 20' },
-            { word: 'sex', clue: '24 - 3 x 6' },
-            { word: 'sju', clue: '13 - 6' },
-            { word: 'åtta', clue: '2 x 2 x 2' },
-            { word: 'nio', clue: '2 + 3 + 4' },
-            { word: 'tio', clue: '81 / 9 + 1' },
-            { word: 'elva', clue: '3 x 5 - 4' },
-            { word: 'tolv', clue: '144 / 12' },
-            { word: 'tretton', clue: '7 + 8 - 2' },
-            { word: 'fjorton', clue: '2 x 9 - 4' },
-            { word: 'femton', clue: '70 - 55' },
-            { word: 'sexton', clue: '32 / 2' },
-            { word: 'sjutton', clue: '61 - 44' },
-            { word: 'arton', clue: '15 + 3' },
-            { word: 'nitton', clue: '3 x 7 - 2' },
-
-            { word: 'tjugofem', clue: '5 x 5' },
-            { word: 'trettiofyra', clue: '17 x 2' },
-            { word: 'fyrtiotvå', clue: '6 x 7' },
-            { word: 'sjuttionio', clue: '9 x 9 - 2' },
-            { word: 'nittionio', clue: '200 - 101' },
-
-            { word: 'etthundratvå', clue: '2 + 10 x 10' },
-            { word: 'etthundraarton', clue: '2 x 9 + 100' },
-            { word: 'tvåhundraelva', clue: '52 x 4 + 3' },
-            { word: 'trehundra', clue: '15 x 20' },
-            { word: 'trehundrafjorton', clue: '207 + 107' },
-            { word: 'femhundratolv', clue: '256 + 256' },
-            { word: 'sexhundra', clue: '20 x 10 x 3' },
-            { word: 'sjuhundrasextiosex', clue: '800 - 34' },
-            { word: 'åttahundraett', clue: '200 x 4 + 1' },
-            { word: 'niohundranittionio', clue: '1000 - 1' }
+            { word: 'Bäver', clue: 'Castor fiber?' },
+            { word: 'Ekorre', clue: 'Sciurus vulgaris?' },
+            { word: 'Gråsäl', clue: 'Halichoerus grypus?' },
+            { word: 'Grävling', clue: 'Meles meles?' },
+            { word: 'Huggorm', clue: 'Vipera berus?' },
+            { word: 'Igelkott', clue: 'Erinaceus europaeus?' },
+            { word: 'Järv', clue: 'Gulo gulo?' },
+            { word: 'Kronhjort', clue: 'Cervus elaphus?' },
+            { word: 'Lodjur', clue: 'Lynx lynx?' },
+            { word: 'Mullvad', clue: 'Talpa europaea?' },
+            { word: 'Mård', clue: 'Martes martes?' },
+            { word: 'Padda', clue: 'Bufo bufo?' },
+            { word: 'Ren', clue: 'Rangifer tarandus?' },
+            { word: 'Rådjur', clue: 'Capreolus capreolus?' },
+            { word: 'Skogshare', clue: 'Lepus timidus?' },
+            { word: 'Snok', clue: 'Natrix natrix?' },
+            { word: 'Utter', clue: 'Lutra lutra?' },
+            { word: 'Varg', clue: 'Canis lupus?' },
+            { word: 'Åkersork', clue: 'Microtus agrestis?' },
+            { word: 'Älg', clue: 'Alces alces?' }
         ]
     }
 };
