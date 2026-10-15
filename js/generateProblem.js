@@ -35,7 +35,7 @@ const getSemiRandomMultiplication = (maxOperand, maxSolution) => {
     if ( maxSolution < maxOperand ) maxOperand = maxSolution;
 
     // Get operands semi randomly
-    const firstOperand = randIntBetween(1, maxOperand);
+    const firstOperand = randIntBetween(1, Math.floor(Math.sqrt(maxOperand)));
     const secondOperand = randIntBetween(1, Math.floor(maxSolution/firstOperand));
 
     // Order operands randomly
@@ -48,11 +48,12 @@ const getSemiRandomMultiplication = (maxOperand, maxSolution) => {
 
 const getSemiRandomDivision = (maxOperand, maxSolution) => {
 
-    // Get a random solution
-    const solution = randIntBetween(1, maxSolution);
-    // Get denominator and nominator
-    const secondOperand = randIntBetween(1, Math.floor(maxOperand/solution));
-    const firstOperand = solution * secondOperand;
+    // Get a random multiplication
+    const randomMultiplication = getSemiRandomMultiplication(maxOperand, maxSolution);
+    // Get a division from the multiplication
+    const solution = randomMultiplication.operands[0];
+    const firstOperand = randomMultiplication.solution;
+    const secondOperand = randomMultiplication.operands[1];
 
     const operandPair = [firstOperand, secondOperand];
     const operator = '/';
